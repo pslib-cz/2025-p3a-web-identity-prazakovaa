@@ -1,0 +1,19 @@
+﻿@page
+@model CoffeeRecordsIdentity.Pages.Admin.UserCupsModel
+@{
+}
+
+@if(User.IsInRole("Admin"))
+{
+    <h1>User Cups</h1>
+
+   @foreach (var userCup in Model.UserCups)
+   {
+    <p>@userCup.UserName</p>
+    <p>@userCup.MachineNo</p>
+   }
+}
+else
+{
+    <h1>Access Denied</h1>
+}
